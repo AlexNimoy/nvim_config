@@ -1,38 +1,5 @@
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-"----------------------- SLIM syntax ---------------
-Plugin 'slim-template/vim-slim.git'
-
-" let Vundle manage Vundle, required
-
-Plugin 'VundleVim/Vundle.vim'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-
-Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-
 " == VIM PLUG ================================
 call plug#begin('~/.vim/plugged')
 
@@ -60,10 +27,6 @@ Plug 'stephpy/vim-yaml' " YAML highliter
 au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/bundle/vim-yaml/after/syntax/yaml.vim
 
 Plug 'posva/vim-vue'
-
-"------------------------ SEARCH ------------------
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 
 " brew install bat
 " brew install fzf
@@ -112,7 +75,7 @@ Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 
 " enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+" autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
 " NOTE: you need to install completion sources to get completions. Check
@@ -132,6 +95,9 @@ Plug 'phpactor/ncm2-phpactor'
 
 "----------------------- git ----------------
 Plug 'tpope/vim-fugitive'
+
+"----------------------- commenter ----------
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 " == VIMPLUG END ================================
@@ -188,6 +154,5 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set showcmd
-set rtp+=~/.fzf
 set colorcolumn=81
 set autoread
