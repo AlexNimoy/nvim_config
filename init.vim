@@ -15,6 +15,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc extensions
 " let g:coc_global_extensions = ['coc-tslint-plugin', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
 
+" Plug 'zxqfl/tabnine-vim'
+
 "------------------------ VIM TSX ------------------------
 " by default, if you open tsx file, neovim does not show syntax colors
 " vim-tsx will do all the coloring for jsx in the .tsx file
@@ -62,6 +64,9 @@ Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+"---------------------- ranger ----------
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 
 " brew install bat
 " brew install fzf
@@ -75,13 +80,11 @@ Plug 'junegunn/fzf.vim'
 "
 "   :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
 "   :Ag! - Start fzf in fullscreen and display the preview window above
-
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)
-
+" command! -bang -nargs=* Ag
+"   \ call fzf#vim#ag(<q-args>,
+"   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+"   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+"   \                 <bang>0)
 let g:fzf_preview_window = 'right:60%'
 
 " =========== Markdown ===========
@@ -102,6 +105,9 @@ let g:ale_linters_explicit = 1
 " let g:airline#extensions#ale#enabled = 1
 let g:ale_sign_column_always = 0
 let g:ale_set_highlights = 1
+
+" =========== Buffer ===========
+Plug 'jlanzarotta/bufexplorer'
 
 call plug#end()
 " == VIMPLUG END ================================
@@ -148,7 +154,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 syntax on
 
-set background=dark
+set background=light
 colorscheme hybrid_reverse
 " colorscheme cryslominsa
 
@@ -160,3 +166,4 @@ set expandtab
 set showcmd
 set colorcolumn=81
 set autoread
+set clipboard+=unnamedplus
